@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.experimental.douban.mapper.HaveWatchMapper">
+    <resultMap id="HaveWatch" type="haveWatch">
+        <id property="uid" column="uid"/>
+        <result property="mid" column="mid"/>
+        <result property="username" column="username"/>
+        <result property="movieName" column="movie_name"/>
+        <result property="number" column="number"/>
+        <result property="createdUser" column="created_user"/>
+        <result property="createdTime" column="created_time"/>
+        <result property="modifiedUser" column="modified_user"/>
+        <result property="modifiedTime" column="modified_time"/>
+    </resultMap>
+    <insert id="AddToHaveWatch">
+        insert into douban.t_have_watch (uid, mid, username, movie_name, number, created_user, created_time, modified_user, modified_time)
+        VALUES (#{uid},#{mid},#{username},#{movieName},#{number},#{createdUser},#{createdTime},#{modifiedUser},#{modifiedTime})
+    </insert>
+</mapper>

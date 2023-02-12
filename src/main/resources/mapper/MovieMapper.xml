@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.experimental.douban.mapper.MovieMapper">
+    <resultMap id="queryMovie" type="movie">
+        <id property="mid" column="mid"/>
+        <result property="movieName" column="movie_name"/>
+        <result property="point" column="point"/>
+        <result property="pointHide" column="point_hide"/>
+        <result property="pointNumber" column="point_number"/>
+        <result property="director" column="director"/>
+        <result property="pubDate" column="pubdate"/>
+        <result property="avatar" column="avatar"/>
+        <result property="evaluate" column="evaluate"/>
+        <result property="briefIntroduction" column="brief_introduction"/>
+        <result property="pictures" column="pictures"/>
+        <result property="actors" column="actors"/>
+        <result property="createdUser" column="created_user"/>
+        <result property="createdTime" column="created_time"/>
+        <result property="modifiedUser" column="modified_user"/>
+        <result property="modifiedTime" column="modified_time"/>
+    </resultMap>
+
+    <select id="findByMovieName" resultMap="queryMovie">
+        select * from douban.t_movie where movie_name=#{movie_name};
+    </select>
+
+</mapper>
